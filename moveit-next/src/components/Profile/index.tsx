@@ -8,7 +8,10 @@ const Profile: React.FC = () => {
           <img src="https://github.com/miltonvilarino.png" alt="Milton Vilarino" />
           <div>
               <strong>Milton Vilarino</strong>
-              <p>Levei 1</p>
+              <p>
+                <img src="icons/level.svg" alt="Level" />
+              Levei 1
+              </p>
           </div>
       </div>
   )
