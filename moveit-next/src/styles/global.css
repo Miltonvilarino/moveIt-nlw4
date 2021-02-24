@@ -48,7 +48,7 @@ a {
     color: inherit;
 }
 
-.App {
+.container {
     height: 100vh;
     max-width: 992px;
     margin: 0 auto;
