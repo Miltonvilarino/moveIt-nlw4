@@ -1,6 +1,6 @@
 import React from "react";
 
-import Head from 'next/head'
+import Head from "next/head";
 
 import CompletedChallenge from "../components/CompletedChallenge";
 import Countdown from "../components/Countdown";
@@ -8,30 +8,29 @@ import ExperienceBar from "../components/ExperienceBar";
 import Profile from "../components/Profile";
 import ChallengeBox from "../components/ChallengeBox";
 
-import styels from '../styles/pages/Home.module.css'
-
+import styels from "../styles/pages/Home.module.css";
+import { CountdownProvider } from "../contexts/CountdownContext";
 
 export default function Home() {
   return (
-    <div className={styels.container} >
+    <div className={styels.container}>
       <Head>
         <title>Inicio - move.it</title>
       </Head>
 
-
       <ExperienceBar />
-
-      <section>
-        <div>
-          <Profile />
-          <CompletedChallenge />
-          <Countdown />
-        </div>
-        <div>
-          <ChallengeBox />
-        </div>
-      </section>
+      <CountdownProvider>
+        <section>
+          <div>
+            <Profile />
+            <CompletedChallenge />
+            <Countdown />
+          </div>
+          <div>
+            <ChallengeBox />
+          </div>
+        </section>
+      </CountdownProvider>
     </div>
   );
 }
-;
