@@ -9,8 +9,6 @@ export default createGlobalStyle`
 
 ${({ theme }) => css `
 
-
-
 @media(max-width: 1080px){
     html {
        font-size: 93.73%; 

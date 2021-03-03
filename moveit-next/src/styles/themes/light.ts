@@ -14,7 +14,6 @@ export default {
       green: '#04d361',
       blue: '#5965E0',
       blueDark: '#4953B8',
-      // blueTwitter: '#2AA9E0'
   
       inputBackground: '#4953b8'
     },
