@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
 import { CountdownContext } from "../../contexts/CountdownContext";
 
-import styles from "../../styles/components/Countdown.module.css";
+import { CountdownButton, WrapperCountdown} from "./styles";
 
 const Countdown: React.FC = () => {
   const {
@@ -18,7 +18,7 @@ const Countdown: React.FC = () => {
 
   return (
     <div>
-      <div className={styles.countdownContainer}>
+      <WrapperCountdown >
         <div>
           <span>{minuteLeft} </span>
           <span>{minuteRight} </span>
@@ -28,30 +28,28 @@ const Countdown: React.FC = () => {
           <span> {secondLeft} </span>
           <span> {secondRight} </span>
         </div>
-      </div>
+      </WrapperCountdown>
 
       {hasFinished ? (
-        <button disabled className={`${styles.countdownButton}`}>
+        <CountdownButton disabled >
           Ciclo Encerrado
-        </button>
+        </CountdownButton>
       ) : (
         <>
           {isActive ? (
-            <button
+            <CountdownButton
               type="button"
-              className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
               onClick={resetCountdown}
             >
               Abandonar Ciclo
-            </button>
+            </CountdownButton>
           ) : (
-            <button
+            <CountdownButton
               type="button"
-              className={styles.countdownButton}
               onClick={startCountdown}
             >
               Iniciar um ciclo
-            </button>
+            </CountdownButton>
           )}
         </>
       )}

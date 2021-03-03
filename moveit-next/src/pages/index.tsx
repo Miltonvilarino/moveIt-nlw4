@@ -12,6 +12,7 @@ import ChallengeBox from "../components/ChallengeBox";
 import styles from "../styles/pages/Home.module.css";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
+import ToggleColor from "../components/ToggleColor";
 
 interface HomeProps {
   level: number;
@@ -33,6 +34,7 @@ export default function Home({ level, currentExperience, challengesCompleted }: 
 
         <ExperienceBar />
         <CountdownProvider>
+        <ToggleColor />
           <section>
             <div>
               <Profile />

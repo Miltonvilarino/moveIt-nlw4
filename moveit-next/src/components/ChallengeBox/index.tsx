@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ChallengesContext } from "../../contexts/ChallengesContext";
 import { CountdownContext } from "../../contexts/CountdownContext";
 
-import styles from "../../styles/components/ChallengeBox.module.css";
+import { ChallengeActive, ChallengeNotActive, Wrapper, ChallengeButton } from './styles';
 
 const ChallengeBox: React.FC = () => {
   const { activeChallenge, resetChallenge, completeChallenge } = useContext(
@@ -21,44 +21,44 @@ const ChallengeBox: React.FC = () => {
   }
 
   return (
-    <div className={styles.challengeBoxContainer}>
+    <Wrapper >
       {activeChallenge ? (
-        <div className={styles.challengeActive}>
+        <ChallengeActive>
           <header>Ganhe {activeChallenge.amount} xp</header>
 
-          <main>
+          <div>
             <img src={`icons/${activeChallenge.type}.svg`} />
             <strong>Novo desafio</strong>
             <p>Levante e faça uma caminha de 3 minutos</p>
-          </main>
+          </div>
 
           <footer>
-            <button
+            <ChallengeButton
               type="button"
-              className={styles.challengeFailedButton}
+              failed
               onClick={handleChallengeFailed}
             >
               Falhei
-            </button>
-            <button
+            </ChallengeButton>
+            <ChallengeButton
+              succeeded
               type="button"
-              className={styles.challengeSucceededButton}
               onClick={handleChallengeSucceeded}
             >
               Completei
-            </button>
+            </ChallengeButton>
           </footer>
-        </div>
+        </ChallengeActive>
       ) : (
-        <div className={styles.challengeNotActive}>
+        <ChallengeNotActive >
           <strong>Finalize um ciclo para receber um desafio</strong>
           <p>
             <img src="icons/level-up.svg" alt="Level UP" />
             Avance de level completando desafios.
           </p>
-        </div>
+        </ChallengeNotActive>
       )}
-    </div>
+    </Wrapper>
   );
 };
 
