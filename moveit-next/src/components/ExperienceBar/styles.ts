@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
+    margin-top: 8px;
     display: flex;
     align-items: center;
     color: ${theme.colors.text};

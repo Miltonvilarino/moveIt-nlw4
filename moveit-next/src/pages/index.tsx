@@ -32,9 +32,9 @@ export default function Home({ level, currentExperience, challengesCompleted }: 
           <title>Inicio - move.it</title>
         </Head>
 
+        <ToggleColor />
         <ExperienceBar />
         <CountdownProvider>
-        <ToggleColor />
           <section>
             <div>
               <Profile />

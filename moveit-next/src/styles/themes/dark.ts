@@ -6,7 +6,7 @@ export default {
       backgroundBox: '#202024',
       backgroundIndex: '#121214',
       backgroundLogo: '#8257e6',
-  
+      
       grayLine: '#DCDDE0',
       text: '#EEEEEE',
       textHighlight: '#5690FF',
