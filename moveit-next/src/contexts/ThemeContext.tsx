@@ -14,17 +14,17 @@ export const ThemesProvider: React.FC = ({ children }) => {
   const [theme, setTheme] = useState<DefaultTheme>(combineTheme(dark))
 
   useEffect(() => {
-    const themeLocal = localStorage.getItem('@MoveIt:theme')
+    const themeLocal = localStorage.getItem('theme')
 
     setTheme(themeLocal === 'light' ? combineTheme(light) : combineTheme(dark))
   }, [])
 
   const ToggleTheme = () => {
     if (theme.title === 'dark') {
-      localStorage.setItem('@MoveIt:theme', light.title)
+      localStorage.setItem('theme', light.title)
       setTheme(combineTheme(light))
     } else {
-      localStorage.setItem('@MoveIt:theme', dark.title)
+      localStorage.setItem('theme', dark.title)
       setTheme(combineTheme(dark))
     }
   }
